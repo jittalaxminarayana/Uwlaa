@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import Home from '../screens/Home/Home';
 import Profile from '../screens/Profile/Profile';
+import Histroy from '../screens/Histroy/Histroy';
 import { COLORS } from '../screens/Styles/Styles';
 import { StyleSheet, Image, View } from 'react-native';
 
@@ -42,39 +42,19 @@ function Bottomtabnavigator() {
                 }}
             />
             <Tab.Screen
-                name="Report"
-                component={Profile}
+                name="Histroy"
+                component={Histroy}
                 options={{
-                    tabBarLabel: 'Report',
+                    tabBarLabel: 'Histroy',
                     tabBarIcon: ({ color, size }) => (
                         <Image
-                            source={require('../assets/bottomtab/report.png')}
+                            source={require('../assets/bottomtab/history.png')}
                             style={{ height: 30, width: 30, tintColor: 'gray' }}
                         />
                     ),
                 }}
             />
-            <Tab.Screen
-                name="add_money"
-                component={Profile}
-                options={{
-                    tabBarLabel: '',
-                    tabBarIcon: ({ color, size }) => <CustomAddMoneyButton />,
-                }}
-            />
-            <Tab.Screen
-                name="split"
-                component={Profile}
-                options={{
-                    tabBarLabel: 'Split',
-                    tabBarIcon: ({ color, size }) => (
-                        <Image
-                            source={require('../assets/bottomtab/split.png')}
-                            style={{ height: 30, width: 30 }}
-                        />
-                    ),
-                }}
-            />
+           
             <Tab.Screen
                 name="profile"
                 component={Profile}
@@ -104,6 +84,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'transparent', // Transparent background
+        backgroundColor: 'transparent',
       },
 });
